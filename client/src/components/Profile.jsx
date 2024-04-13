@@ -6,6 +6,8 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import Container from './Container';
 import { useNavigate } from "react-router-dom";
 
+const ROOT_PATH = process.env.REACT_APP_API_URL;
+
 const Profile = () => {
   const [notes, setNotes] = useState([]);
   const [currentNote, setCurrentNote] = useState('');
@@ -18,7 +20,7 @@ const Profile = () => {
 
   const fetchNotes = async () => {
     console.log(accessToken)
-    const apiUrl = 'http://localhost:8000/journal/alljournals';
+    const apiUrl = `${ROOT_PATH}/journal/alljournals`;
     try {
       const response = await fetch(apiUrl, {
         method: "GET",
@@ -36,7 +38,7 @@ const Profile = () => {
 
   const fetchName = async () => {
     console.log(accessToken)
-    const apiUrl = 'http://localhost:8000/user/name';
+    const apiUrl = `${ROOT_PATH}/user/name`;
     try {
       const response = await fetch(apiUrl, {
         method: "GET",
@@ -66,7 +68,7 @@ const Profile = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const apiUrl = 'http://localhost:8000/journal/newjournal';
+    const apiUrl = `${ROOT_PATH}/journal/newjournal`;
     const method = 'POST';
 
     try {
@@ -116,7 +118,7 @@ const Profile = () => {
 
   // Function to submit new username
   const handleSubmitUsername = async () => {
-    const apiUrl = 'http://localhost:8000/user/name';
+    const apiUrl = `${ROOT_PATH}/user/name`;
     const method = (currentName === undefined || currentName === "") ? 'POST' : "PUT";
 
     try {
@@ -152,7 +154,7 @@ const Profile = () => {
   };
 
   const deleteNote = async (id) => {
-    const apiUrl = `http://localhost:8000/journal/${id}`;
+    const apiUrl = `${ROOT_PATH}/journal/${id}`;
     try {
       const response = await fetch(apiUrl, { 
         method: 'DELETE',

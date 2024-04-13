@@ -5,6 +5,7 @@ import { useAuthToken } from '../AuthTokenContext'
 import AddMoreButton from './AddMoreButton';
 import Container from './Container';
 
+const ROOT_PATH = process.env.REACT_APP_API_URL;
 const Home = () => {
   const [numTotalNotes, setNumTotalNotes] = useState(0);
   const [numPersonalNotes, setNumPersonalNotes] = useState(0);
@@ -13,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchTotalCount = async () => {
-      const apiUrl = 'http://localhost:8000/journal/totalCount';
+      const apiUrl = `${ROOT_PATH}/journal/totalCount`;
       try {
         const response = await fetch(apiUrl, {
           method: 'GET',
@@ -30,7 +31,7 @@ const Home = () => {
     };
 
     const fetchPersonalCount = async () => {
-      const apiUrl = 'http://localhost:8000/journal/personalCount';
+      const apiUrl = `${ROOT_PATH}/journal/personalCount`;
       try {
         const response = await fetch(apiUrl, {
           method: 'GET',

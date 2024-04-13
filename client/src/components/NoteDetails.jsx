@@ -5,6 +5,7 @@ import '../css/styles.css';
 import { withAuthenticationRequired } from "@auth0/auth0-react";
 import { useAuthToken } from '../AuthTokenContext'
 
+const ROOT_PATH = process.env.REACT_APP_API_URL;
 const NoteDetails = () => {
     const location = useLocation();
     const [currentNote, setCurrentNote] = useState(location.state.noteContent);
@@ -14,7 +15,7 @@ const NoteDetails = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const apiUrl = `http://localhost:8000/journal/updatejournal`;
+        const apiUrl = `${ROOT_PATH}/journal/updatejournal`;
         const method = 'PUT';
 
         try {
