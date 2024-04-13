@@ -42,7 +42,7 @@ const Home = () => {
         });
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const numNotes = await response.json();
-        setNumPersonalNotes(numNotes.count);
+        setNumPersonalNotes(numNotes.count === undefined ? 0 : numNotes.count);
       } catch (error) {
         console.error('Error fetching personal count', error);
       }
