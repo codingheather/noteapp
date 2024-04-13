@@ -231,6 +231,6 @@ app.get("/ping", (req, res) => {
   res.send("pong");
 });
 
-app.listen(8000, () => {
-  console.log("Server running on http://localhost:8000 🎉 🚀");
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT} 🎉 🚀`);
 });
