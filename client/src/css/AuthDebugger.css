@@ -1,0 +1,35 @@
+.auth-debugger-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.token-box,
+.user-info-box {
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow: auto; /* Enable scrollbars if content overflows */
+}
+
+.box-title {
+    font-weight: bold;
+}
+
+.box-content {
+    white-space: pre-wrap;
+    word-wrap: break-word; /* Wrap long words */
+}
+
+@media screen and (max-width: 600px) {
+    .auth-debugger-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .token-box,
+    .user-info-box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

@@ -2,9 +2,12 @@ import React from "react";
 import * as ReactDOMClient from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
-import Home from "./components/Home";
+import Profile from "./components/Profile";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { AuthTokenProvider } from "./AuthTokenContext";
+import Home from "./components/Home";
+import AuthDebugger from "./components/AuthDebugger";
+import NoteDetails from "./components/NoteDetails";
 
 const container = document.getElementById("root");
 const root = ReactDOMClient.createRoot(container);
@@ -25,7 +28,10 @@ root.render(
       <AuthTokenProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />  
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/details/:id" element={<NoteDetails />} />
+            <Route path="debugger" element={<AuthDebugger />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

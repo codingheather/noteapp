@@ -1,0 +1,15 @@
+.primaryButton, .secondaryButton {
+    width: 100px;
+    background-color: #7469B6;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.secondaryButton {
+    background-color: #7469B6;
+}

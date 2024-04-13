@@ -1,0 +1,415 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #cf9aff, #95c0ff);
+    color: #7E6363;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 827px;
+    height: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+#list-header {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.blankDiv {
+    background-color: #fff;
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addNoteDiv {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addNoteDiv:hover {
+    transition: 0.25s;
+    background-color: #f1f1f1;
+}
+
+
+#addNoteDiv i {
+    font-size: 70px;
+    color: gainsboro;
+}
+
+
+#list-container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+li {
+    background-color: #E1AFD1;
+    margin: 5px 0;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 9px 9px 18px #b3b3b3,
+        -9px -9px 18px #ffffff;
+}
+
+li span#dateText {
+    font-size: 12px;
+    word-wrap: break-word;
+    overflow-y: auto;
+    max-height: 10%;
+}
+
+li span#contentText {
+    font-size: 12px;
+    word-wrap: break-word;
+    overflow-y: auto;
+    max-height: 70%;
+}
+
+#editBtn,
+#deleteBtn {
+    background-color: #FFE6E6;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 60px;
+}
+
+#editBtn {
+    background-color: #AD88C6;
+}
+
+#deleteBtn:hover {
+    background-color: #7469B6;
+}
+
+#editBtn:hover {
+    background-color: #7469B6;
+}
+
+
+#popupContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+textarea {
+    width: 300px;
+    height: 200px;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 2px solid #7469B6;
+}
+
+#btn-container {
+    display: flex;
+}
+
+#submitBtn,
+#closeBtn {
+    width: 100px;
+    background-color: #7469B6;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#closeBtn {
+    background-color: gainsboro;
+}
+
+
+#editing-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#submitBtn,
+#closeBtn {
+    width: 100px;
+    background-color: #7469B6;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#closeBtn {
+    background-color: gainsboro;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+
+
+.welcome-section {
+    margin-bottom: 30px;
+    /* Add spacing between sections */
+}
+
+.welcome-section h1 {
+    font-size: 2rem;
+    /* Larger font size for the welcome message */
+    color: #333;
+    /* Adjust to match the overall color scheme */
+    margin-bottom: 10px;
+    /* Add spacing below the heading */
+}
+
+.subtext {
+    font-size: 1.2rem;
+    /* Smaller font size for the subtext */
+    color: #666;
+    /* Adjust to match the overall color scheme */
+}
+
+.note-section {
+    display: flex;
+    justify-content: space-around;
+    /* Align note statistics side by side */
+    margin-bottom: 30px;
+    /* Add spacing between sections */
+}
+
+.note-stats {
+    width: 45%;
+    /* Adjust width to fit two note statistics side by side */
+    background-color: #f9f9f9;
+    /* Background color for note statistics */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 20px;
+    /* Add padding */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    /* Add box shadow */
+}
+
+.note-stats h2 {
+    font-size: 1.5rem;
+    /* Font size for note statistics headings */
+    color: #333;
+    /* Adjust to match the overall color scheme */
+    margin-bottom: 10px;
+    /* Add spacing below the heading */
+}
+
+.note-count {
+    font-size: 1.2rem;
+    /* Font size for note counts */
+    color: #333;
+    /* Adjust to match the overall color scheme */
+}
+
+.AddMoreButton {
+    background-color: #007bff;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border: none;
+    /* Remove button border */
+    padding: 10px 20px;
+    /* Add padding */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Add cursor pointer on hover */
+    font-size: 1rem;
+    /* Font size */
+    transition: background-color 0.2s ease;
+    /* Smooth transition */
+}
+
+.AddMoreButton:hover {
+    background-color: #0056b3;
+    /* Button background color on hover */
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.left-links {
+    display: flex;
+}
+
+.left-links a {
+    margin-right: 10px;
+}
+
+.logout-button {
+    margin-right: 20px;
+    /* Adjust margin as needed */
+}
+
+#namePopupContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #container {
+        width: 90%; /* Adjusted to a percentage */
+        height: auto; /* Changed to auto for content-based height */
+        padding: 10px; /* Reduced padding */
+    }
+
+    .blankDiv,
+    #addNoteDiv,
+    li,
+    .note-stats {
+        width: 45%; /* Adjusted to a percentage */
+    }
+
+    textarea {
+        width: 90%; /* Adjusted to a percentage */
+    }
+
+    #btn-container {
+        flex-direction: column; /* Change to column layout */
+    }
+
+    #submitBtn,
+    #closeBtn,
+    .login-button,
+    .AddMoreButton {
+        width: 100%; /* Adjusted to 100% for full width */
+        margin: 5px 0; /* Added margin */
+    }
+
+    .topnav a {
+        padding: 10px; /* Adjusted padding */
+        font-size: 14px; /* Adjusted font size */
+    }
+
+    .left-links a {
+        margin-right: 5px; /* Adjusted margin */
+    }
+
+    .logout-button {
+        margin-right: 10px; /* Adjusted margin */
+    }
+}
