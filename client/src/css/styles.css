@@ -71,8 +71,8 @@ body {
 
 #list-container {
     display: flex;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
+    justify-content: space-between;
 }
 
 ul {
@@ -86,9 +86,9 @@ ul {
 }
 
 li {
-    width: calc(33.33% - 20px); /* Each item takes up one third of the container width, minus margins */
+    flex: 1 0 30%; /* Grow and shrink as needed, base width of 30% */
     background-color: #E1AFD1;
-    margin: 5px 10px;
+    margin: 5px 0;
     padding: 20px;
     border-radius: 8px;
     display: flex;
@@ -96,6 +96,7 @@ li {
     align-items: center;
     justify-content: space-between;
     height: 200px;
+    margin: 10px;
     border-radius: 10px;
     box-shadow: 9px 9px 18px #b3b3b3,
         -9px -9px 18px #ffffff;
