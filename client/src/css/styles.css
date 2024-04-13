@@ -82,9 +82,11 @@ ul {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    justify-content: space-between; /* Distribute items evenly */
 }
 
 li {
+    flex: 1 0 30%; /* Grow and shrink as needed, base width of 30% */
     background-color: #E1AFD1;
     margin: 5px 0;
     padding: 20px;
@@ -94,7 +96,6 @@ li {
     align-items: center;
     justify-content: space-between;
     height: 200px;
-    width: 200px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 9px 9px 18px #b3b3b3,
