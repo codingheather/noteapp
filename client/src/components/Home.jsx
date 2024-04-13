@@ -77,7 +77,7 @@ const Home = () => {
     if (quote == "") {
       fetchQuote();
     }
-  });
+  }, []);
   
   console.log(numPersonalNotes)
 
