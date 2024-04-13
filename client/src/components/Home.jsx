@@ -9,7 +9,7 @@ const ROOT_PATH = process.env.REACT_APP_API_URL;
 const Home = () => {
   const [numTotalNotes, setNumTotalNotes] = useState(0);
   const [numPersonalNotes, setNumPersonalNotes] = useState(0);
-  const [quote, setQuote] = useState(undefined);
+  const [quote, setQuote] = useState("");
   const { accessToken } = useAuthToken();
 
   useEffect(() => {
@@ -74,7 +74,7 @@ const Home = () => {
       }
     };
 
-    if (quote === undefined) {
+    if (quote == "") {
       fetchQuote();
     }
   });
